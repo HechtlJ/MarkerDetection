@@ -81,6 +81,10 @@ add_executable(marker_detection src/poseEstimation.cpp src/main.cpp src/helper.c
 target_link_libraries(marker_detection ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(marker_detection ${catkin_EXPORTED_TARGETS})
 
+add_executable(coordinate_analyzer src/coordinate_analyzer.cpp src/analyzer.cpp)
+target_link_libraries(coordinate_analyzer ${catkin_LIBRARIES})
+add_dependencies(coordinate_analyzer ${catkin_EXPORTED_TARGETS})
+
 
 
 ######################
