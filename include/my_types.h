@@ -15,6 +15,10 @@ struct my_transform{
         return my_transform(a.x+x, a.y+y, a.z+z);
     }
 
+    my_transform operator-(const my_transform& a) const{
+        return my_transform(a.x-x, a.y-y, a.z-z);
+    }
+
     my_transform operator/(const int& i){
         my_transform result;
         result.x = x / (double)i;

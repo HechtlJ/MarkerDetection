@@ -46,9 +46,21 @@ int main(int argc, char **argv)
   {
     
     analyzer.calculate_values();
+
     my_transform average = analyzer.get_average();
+    my_transform min = analyzer.get_min();
+    my_transform max = analyzer.get_max();
+    my_transform diff = max - min;
+    my_transform deviation = analyzer.get_standard_deviation();
     int count = analyzer.get_data_count();
-    ROS_INFO("%f %f %f from %d values", average.x, average.y, average.z, count);
+
+    ROS_INFO("Analysis of %d values:", count);
+    ROS_INFO("Average Values: %f %f %f ", average.x, average.y, average.z);
+    ROS_INFO("Minimal Values: %f %f %f ", min.x, min.y, min.z);
+    ROS_INFO("Maximum Values: %f %f %f ", max.x, max.y, max.z);
+    ROS_INFO("Max Difference: %f %f %f ", diff.x, diff.y, diff.z);
+    ROS_INFO("Standard Deviation: %f %f %f \n", deviation.x, deviation.y, deviation.z);
+
 
 
     ros::spinOnce();

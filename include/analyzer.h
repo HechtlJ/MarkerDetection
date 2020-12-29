@@ -23,28 +23,17 @@ class Analyzer{
     public:
         Analyzer();
 
-        /**
-         * @brief 
-         * 
-         * @param data A double array of size 16, representing the 16 values of one transform.
-         */
         void add_data(const std_msgs::Float64MultiArray::ConstPtr& msg);
 
-        /**
-         * @brief Returns the average of the given field
-         * 
-         * @param field index of data
-         * @return double average of data[field]
-         */
         void calculate_values();
+
         my_transform get_average();
         my_transform get_standard_deviation();
         my_transform get_min();
-        my_transform get_max();
+        my_transform get_max();     
         int get_data_count();
 
     private:
-        int data_count;
         std::vector<my_transform> data;
         void reset();
         my_transform average;
@@ -54,6 +43,8 @@ class Analyzer{
 
         void calculate_average();
         void calculate_min();
+        void calculate_max();
+        void calculate_standard_deviation();
 };
 
 
