@@ -85,6 +85,10 @@ add_executable(coordinate_analyzer src/coordinate_analyzer.cpp src/analyzer.cpp)
 target_link_libraries(coordinate_analyzer ${catkin_LIBRARIES})
 add_dependencies(coordinate_analyzer ${catkin_EXPORTED_TARGETS})
 
+add_executable(charuco_create src/charuco_create.cpp )
+target_link_libraries(charuco_create  ${OpenCV_LIBS} ${catkin_LIBRARIES})
+add_dependencies(marker_detection ${catkin_EXPORTED_TARGETS})
+
 
 
 ######################
